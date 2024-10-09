@@ -94,7 +94,7 @@ kaggle_id: # your kaggle id
 keybase_username: # your keybase user name
 lastfm_id: # your lastfm id
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
-linkedin_username: # your LinkedIn user name
+linkedin_username: florian-bastin-08940b131
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 medium_username: # your Medium username
 orcid_id: # your ORCID ID
@@ -176,8 +176,10 @@ disqus_shortname: Generative AI # put your disqus shortname
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+  - name: Google Beam summit 2023
+    posts:
+      - url: https://beamsummit.org/sessions/2023/how-to-balance-power-and-control-when-using-dataflow-with-an-oltp-sql-database/
+      - published_date: 2023-07-14
   - name: Octo publications
     posts:
       - url: https://blog.octo.com/le-chatbot-docto-langchain-rag-et-code-associe
