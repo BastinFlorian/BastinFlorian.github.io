@@ -16,10 +16,6 @@ description: >
   I improved my skills in the GCP and Azure Cloud working on it with my clients or with certifications. I discovered CI/CD and clean code & architecture good practises.
   I recently got awarded by Google at their Gen AI competition in the category Superior GenAI Business Value and ROI.
   I am also a Generative AI & GCP Cloud teacher at Tunis Dauphine University
-
-
-# the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
