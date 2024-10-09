@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://BastinFlorian.github.io.git/sitemap.xml
+Sitemap: https://bastinflorian.github.io.git/sitemap.xml
