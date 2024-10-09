@@ -179,7 +179,7 @@ external_sources:
   - name: Google Beam Summit 2023
     posts:
       - url: https://beamsummit.org/sessions/2023/how-to-balance-power-and-control-when-using-dataflow-with-an-oltp-sql-database/
-        published_date: 2023-07-14
+      published_date: 2023-07-14
   - name: Octo publications
     posts:
       - url: https://blog.octo.com/le-chatbot-docto-langchain-rag-et-code-associe
