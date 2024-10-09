@@ -106,15 +106,15 @@ research_gate_profile: # your profile on ResearchGate
 scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
-spotify_id: # your spotify id
+spotify_id: 4Y7k3SpY00R7w0O0CfuGol
 stackoverflow_id: # your stackoverflow id
 telegram_username: # your Telegram user name
 unsplash_id: # your unsplash id
 wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
+whatsapp_number: (+33)6 37 51 96 84
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
-work_url: # work page URL
+work_url: https://tunis.dauphine.psl.eu/masters/big-data-intelligence-artificielle/2e-annee-master-big-data-intelligence-artificielle/intervenants
 x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
