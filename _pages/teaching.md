@@ -7,6 +7,16 @@ nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Generative AI
 
-Organize your courses by years, topics, or universities, however you like!
+- The Git exercices is available [here](https://github.com/BastinFlorian/GenAI-Dauphine-Course)
+- The Podcast Spotify playlist is avalailable [here](https://open.spotify.com/show/4Y7k3SpY00R7w0O0CfuGol)
+- The course will
+
+
+## AI with GCP
+
+- The Git exercice repository is available [here](https://github.com/BastinFlorian/GenAI-GCP)
+-
+
+
