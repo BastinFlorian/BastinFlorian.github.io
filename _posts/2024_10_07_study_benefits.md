@@ -3,8 +3,8 @@ layout: post
 title: Créer du contenu de formation, 6 apprentissages
 date: 2024-10-07 00:32:13
 description: Les bienfaits de la formation, de l'enseignement et de l'apprentissage
-tags: formation, enseignement, apprentissage, formation, open-source, cloud, générateurs de code
-categories: Gen AI, GCP, Dauphione Tunis
+tags: GenAI GCP Dauphine-Tunis Teaching
+categories: Teaching
 tabs: true
 ---
 
