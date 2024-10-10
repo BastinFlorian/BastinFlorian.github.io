@@ -15,10 +15,12 @@ nav_order: 6
 
 | Session | Date | Course Name | Slides | Exercices | Solutions |
 |---------|------|--------|--------|-------|------------------- |
-| 1       | 2024-10-23 | Building Large Language Models | [slides](/assets/pdf/genai_1.pdf) | TP1 |  solution
-| 2       | 2024-10-24 | Transformers Architecture | [slides](/assets/pdf/genai_2.pdf) | TP2 | solution
-| 3       | 2024-10-25 | Retrieval Augmented Generation | [slides](/assets/pdf/genai_3.pdf) | TP3 | solution
-| 4       | 2024-10-26 | Beyond LLM, Agent & Tools | slides | TP4 | solution
+| 1       | 2024-10-23 | Building Large Language Models | [slides](/assets/pdf/genai_1.pdf) | [TP 1](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/1_transformers.ipynb) |  solution
+| 2       | 2024-10-24 | Transformers Architecture | [slides](/assets/pdf/genai_2.pdf) | [TP 2](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/2_attention.ipynb) | solution
+| 3       | 2024-10-25 | Retrieval Augmented Generation | [slides](/assets/pdf/genai_3.pdf) | [TP 3](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/3_basic_rag.ipynb) | solution
+| 4       | 2024-10-26 | Beyond LLM, Agent & Tools | slides | TP 4 | solution
+
+
 
 ## AI with GCP
 
@@ -28,7 +30,7 @@ nav_order: 6
 
 | Session | Date | Course Name | Slides | Exercices | Solutions |
 |---------|------|--------|--------|-------|------------------- |
-| 1       | 2024-10-23 | Introduction to GCP | slides | [TP1](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_1) | solution
-| 2       | 2024-10-24 | Databases | slides | [TP2](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_2) | solution
-| 3       | 2024-10-25 | Application deployment | slides | [TP3](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_3) | solution
-| 4       | 2024-10-26 | Vertex AI | slides | [TP4](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_4) | solution
+| 1       | 2024-10-23 | Introduction to GCP | slides | [TP 1](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_1) | solution
+| 2       | 2024-10-24 | Databases | slides | [TP 2](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_2) | solution
+| 3       | 2024-10-25 | Application deployment | slides | [TP 3](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_3) | solution
+| 4       | 2024-10-26 | Vertex AI | slides | [TP 4](https://github.com/BastinFlorian/GenAI-GCP/tree/main/exercices/tp_4) | solution
