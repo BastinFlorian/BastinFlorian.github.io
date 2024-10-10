@@ -1,11 +1,13 @@
 ---
 layout: page
 permalink: /teaching/
-title: Dauphine Tunis
-description: Materials for courses you taught. Replace this text with your description.
+title: Teaching
+description: Teaching materials
 nav: true
 nav_order: 6
 ---
+
+# Dauphine Tunis 2024-2025
 
 ## Generative AI
 
