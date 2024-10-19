@@ -8,23 +8,16 @@ date: 2024-10-18
 featured: true
 categories: Teaching
 
-# Optionally, you can add a table of contents to your post.
-# NOTES:
-#   - make sure that TOC names match the actual section names
-#     for hyperlinks within the post to work correctly.
-#   - we may want to automate TOC generation in the future using
-#     jekyll-toc plugin (https://github.com/toshimaru/jekyll-toc).
+layout: post
+title: Generative AI Quiz
+date: 2024-10-18 10:14:00-0400
+description: Generative AI Quiz for Dauphine Tunis students
+tags: GenAI Quiz Dauphine-Tunis Teaching
+categories: Teaching
+giscus_comments: false
+related_posts: true
 toc:
-  - name: Quiz 1 - Building Large Language Models
-    - name: Questions
-    - name: Solutions
-  -  name: Quiz 2 - Before Transformers
-    - name: Questions
-    - name: Solutions
-    # if a section has subsections, you can add them as follows:
-    # subsections:
-    #   - name: Example Child Subsection 1
-    #   - name: Example Child Subsection 2
+  sidebar: left
 ---
 
 ## Quiz 1 - Building Large Language Models

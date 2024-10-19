@@ -23,6 +23,7 @@ nav_order: 6
 | 4       | 2024-10-26 | Beyond LLM, Agent & Tools | slides | TP 4 | solution
 
 
+---
 
 ## AI with GCP
 
