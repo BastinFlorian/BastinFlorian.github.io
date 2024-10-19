@@ -3,8 +3,8 @@ layout: distill
 title: Generative AI Quiz
 description: Generative AI Quiz for Dauphine Tunis students
 tags: GenAI Quiz Dauphine-Tunis Teaching
-giscus_comments: true
-date: 2024-10-18 01:00:00-0400
+giscus_comments: false
+date: 2024-10-18
 featured: true
 categories: Teaching
 
@@ -15,34 +15,19 @@ categories: Teaching
 #   - we may want to automate TOC generation in the future using
 #     jekyll-toc plugin (https://github.com/toshimaru/jekyll-toc).
 toc:
-  - name: Quiz 1: Building Large Language Models
+  - name: Quiz 1 - Building Large Language Models
+    - name: Questions
+    - name: Solutions
+  -  name: Quiz 2 - Before Transformers
     - name: Questions
     - name: Solutions
     # if a section has subsections, you can add them as follows:
     # subsections:
     #   - name: Example Child Subsection 1
     #   - name: Example Child Subsection 2
-
-# Below is an example of injecting additional post-specific styles.
-# If you use this post as a template, delete this _styles block.
-_styles: >
-  .fake-img {
-    background: #bbb;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 12px;
-  }
-  .fake-img p {
-    font-family: monospace;
-    color: white;
-    text-align: left;
-    margin: 12px 0;
-    text-align: center;
-    font-size: 16px;
-  }
 ---
 
-## Quiz 1: Building Large Language Models
+## Quiz 1 - Building Large Language Models
 ### Questions
 
 Question 1: **What does LLM mean?**
@@ -124,14 +109,76 @@ Question 11: **What is a main challenge in evaluating LLMs?**
 
 ### Solutions
 
-- Solution 1: C)
-- Solution 2: C)
-- Solution 3: B)
-- Solution 4: B)
-- Solution 5: B)
-- Solution 6: C)
-- Solution 7: C)
-- Solution 8: B)
-- Solution 9: B)
-- Solution 10: B)
-- Solution 11: A)
+- Solution 1: C
+- Solution 2: C
+- Solution 3: B
+- Solution 4: B
+- Solution 5: B
+- Solution 6: C
+- Solution 7: C
+- Solution 8: B
+- Solution 9: B
+- Solution 10: B
+- Solution 11: A
+
+
+## Quiz 2 - Before Transformers
+### Questions
+
+Question 1: **What is an N-gram in language modeling**
+
+- A) A neural network component.
+- B) A statistical sequence of N items.
+- C) A word embedding technique.
+- D) A parsing algorithm.
+
+Question 2: **Word embeddings are sparse vectors.**
+
+- A) True
+- B) False
+
+Question 3: **How do recurrent neural networks (RNNs) work?**
+
+- A) Process inputs independently
+- B) Use internal states to handle sequences
+- C) Apply convolution over data
+- D) Utilize attention mechanisms
+
+Question 4: **What is the limitation of RNNs in language modeling?**
+
+- A) Difficulty learning long-term dependencies
+- B) Suffering from vanishing gradient problem
+- C) Cannot be implemented using GPU for acceleration
+- D) Cannot handle variable-length sequences
+
+Question 5: **LSTM models improve upon RNNs by**
+
+- A) Requiring less computational power than RNN
+- B) Solving the vanishing gradient problem
+- C) Introducing the gating mechanism for long-term dependencies
+- D) Not overfitting due to their architectural improvements over RNN
+
+Question 6: **How do LSTMs solve the vanishing gradient problem?**
+
+- A) By resetting the hidden state after each time step
+- B) By avoiding using recurrent connections
+- C) Using gate mechanisms to reduce the flow of information
+- D) With the cell state allowing gradient to flow unchanged
+
+Question 7: **How do LSTMs learn?**
+
+- A) Using self-supervised learning for time series forecasting
+- B) Using backpropagation through time
+- C) Using supervised learning for next word prediction
+- D) Using perplexity as a loss function
+
+### Solutions
+
+- Solution 1: B
+- Solution 2: B
+- Solution 3: B
+- Solution 4: A, B
+- Solution 5: B, C
+- Solution 6: C, D
+- Solution 7: B
+
