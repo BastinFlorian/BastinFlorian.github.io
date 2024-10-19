@@ -458,11 +458,11 @@ Question 8: **What are some current limitations of LLM agents and multi-agent sy
 
 ### Solutions
 
-- Solution 1: B) & D)
-- Solution 2: A) & C)
-- Solution 3: B) & C)
-- Solution 4: A) & B)
-- Solution 5: C)
-- Solution 6: A) & C)
-- Solution 7: B)
-- Solution 8: A) & D)
+- Solution 1: B, D
+- Solution 2: A, C
+- Solution 3: B, C
+- Solution 4: A, B
+- Solution 5: C
+- Solution 6: A, C
+- Solution 7: B
+- Solution 8: A, D
