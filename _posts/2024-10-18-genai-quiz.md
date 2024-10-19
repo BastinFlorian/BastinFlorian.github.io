@@ -1,13 +1,4 @@
 ---
-layout: distill
-title: Generative AI Quiz
-description: Generative AI Quiz for Dauphine Tunis students
-tags: GenAI Quiz Dauphine-Tunis Teaching
-giscus_comments: false
-date: 2024-10-18
-featured: true
-categories: Teaching
-
 layout: post
 title: Generative AI Quiz
 date: 2024-10-18 10:14:00-0400
@@ -15,7 +6,7 @@ description: Generative AI Quiz for Dauphine Tunis students
 tags: GenAI Quiz Dauphine-Tunis Teaching
 categories: Teaching
 giscus_comments: false
-related_posts: true
+related_posts: false
 toc:
   sidebar: left
 ---
