@@ -13,6 +13,7 @@ nav_order: 6
 
 - The Git exercices repository is available [here](https://github.com/BastinFlorian/GenAI-Dauphine-Course)
 - The Podcast Spotify playlist is avalailable [here](https://open.spotify.com/show/4Y7k3SpY00R7w0O0CfuGol)
+- The quizzes page is available [here](https://bastinflorian.github.io/blog/2024/genai-quiz/) and will be updated after each course
 - The courses & solutions will be updated after each session:
 
 | Session | Date | Course Name | Slides | Exercices | Solutions |
