@@ -19,7 +19,7 @@ nav_order: 6
 | Session | Date | Course Name | Slides | Exercices | Solutions |
 |---------|------|--------|--------|-------|------------------- |
 | 1       | 2024-10-23 | Building Large Language Models | [slides](/assets/pdf/1-GENAI.pdf) | [TP 1](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/1_transformers.ipynb) | solution
-| 2       | 2024-10-24 | Transformers Architecture | [slides](/assets/pdf/2-GENAI.pdf) [TP 2](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/2_attention.ipynb) | solution
+| 2       | 2024-10-24 | Transformers Architecture | [slides](/assets/pdf/2-GENAI.pdf) |  [TP 2](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/2_attention.ipynb) | solution
 | 3       | 2024-10-25 | Retrieval Augmented Generation | [slides](/assets/pdf/3-GENAI.pdf) | [TP 3](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/3_basic_rag.ipynb)  | solution
 | 4       | 2024-12-06 | Beyond LLM, Agent & Tools | [slides](/assets/pdf/4-GENAI.pdf) | TP 4  | solution
 
@@ -40,13 +40,14 @@ nav_order: 6
 | 4       | 2024-10-26 | Multimodal RAG | slides | [TP 4](https://www.cloudskillsboost.google/focuses/87625?catalog_rank=%7B%22rank%22%3A3%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=40062814) |
 | 5       | 2024-10-26 | Agent Builder | slides | [TP 5](https://www.cloudskillsboost.google/focuses/95417?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=39997823) |
 
+---
 
 ## Projects: Medical GCP Chatbot
 You are tasked with creating a technical chatbot capable of answering specific questions in the medical field.
 
 **Available Data:**
 
-https://www.kaggle.com/datasets/jpmiller/layoutlm/data
+- [Data](https://www.kaggle.com/datasets/jpmiller/layoutlm/data)
 
 **Evaluation Criteria:**
 
