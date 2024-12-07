@@ -21,7 +21,7 @@ nav_order: 6
 | 1       | 2024-10-23 | Building Large Language Models | [slides](/assets/pdf/1-GENAI.pdf) | [TP 1](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/1_transformers.ipynb) | solution
 | 2       | 2024-10-24 | Transformers Architecture | [slides](/assets/pdf/2-GENAI.pdf) |  [TP 2](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/2_attention.ipynb) | solution
 | 3       | 2024-10-25 | Retrieval Augmented Generation | [slides](/assets/pdf/3-GENAI.pdf) | [TP 3](https://github.com/BastinFlorian/GenAI-Dauphine-Course/blob/main/exercices/3_basic_rag.ipynb)  | solution
-| 4       | 2024-12-06 | Beyond LLM, Agent & Tools | [slides](/assets/pdf/4-GENAI.pdf) | TP 4  | solution
+| 4       | 2024-12-06 | Beyond LLM, Agent & Tools | [slides](/assets/pdf/4-GENAI.pdf) | [TP 4](https://learn.deeplearning.ai/courses/ai-agents-in-langgraph/lesson/3/langgraph-components)
 
 
 ---
@@ -99,3 +99,33 @@ You are tasked with creating a technical chatbot capable of answering specific q
 
 - Deadline: Please submit your project by January 15th via a GitHub link, including the model card in the README.
 - Presentation: A 15-minute demonstration of your solution via screen sharing will take place on January 25th. During the session, I will ask about your solution choices and reasoning. If you cannot attend on January 25th, please notify me as soon as possible with a valid reason so we can arrange another time.
+
+----
+
+## Grading
+
+**AI on the Cloud:**
+
+- 40% of the grade is based on the lab reports and the performance of your chatbot from Lab 4.
+- 60% of the grade is based on the final project.
+
+**Generative AI:**
+
+- 20% of the grade is based on the lab reports and the performance of your chatbot from Lab 4.
+- 30% of the grade is based on quiz results.
+- 50% of the grade is based on the final project.
+
+**Grading Criteria for Generative AI:**
+- The quality of reasoning and model choices.
+- The performance of your solution.
+- The rigor of evaluation.
+- The quality of your presentation.
+
+**Grading Criteria for AI on the Cloud:**
+
+- Thoughtful use of Cloud tools.
+- Hosting your project on your own GitHub.
+- Adherence to PEP8 best practices (Flake8, PyLint, Black, etc.).
+- Good practices for commits and pull requests.
+
+Regarding the project content, feel free to submit your proposals based on your professionalization goals or internship themes. These proposals can focus on the generation of images, text, video, or sound.
