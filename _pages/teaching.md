@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-# Dauphine Tunis 2025-2026 - Generative AI
+# 📚 Dauphine Tunis 2025-2026 - Generative AI
 
 ## 📚 Course Materials by Chapter
 - **Chapter 1 - Prompting:** [Chapter 1 - Prompting](/assets/pdf/1%20-%20Prompt%20-%202025%20-%20Dauphine.pdf)
@@ -60,8 +60,6 @@ nav_order: 6
 
 # 📚 Dauphine Tunis 2024-2025 (Archive)
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
-<h2 style="color: white; margin-top: 0;">🎓 Generative AI Course</h2>
 
 ### 📖 Course Materials
 - **📄 Complete Course Materials:** [Gen AI - Dauphine Tunis.pdf](/assets/pdf/Gen%20AI%20-%20Dauphine%20Tunis.pdf)
@@ -72,13 +70,9 @@ nav_order: 6
 ### ☁️ AI with Google Cloud Platform
 - **🔧 Cloud Exercises Repository:** [GenAI-GCP](https://github.com/BastinFlorian/GenAI-GCP)
 
-</div>
 
 ### 🎯 Final Project & Grading (2024-2025)
 
-<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
-
-<h3 style="color: white; margin-top: 0;">🏥 Medical GCP Chatbot Project</h3>
 
 **📋 Project Overview:**
 Create a technical chatbot for answering medical field questions using cloud technologies.
@@ -106,12 +100,6 @@ Create a technical chatbot for answering medical field questions using cloud tec
 - **📆 Deadline:** January 15th (GitHub link + model card)
 - **🎤 Presentation:** January 25th (15 min demo + Q&A)
 
-</div>
-
-<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
-
-<h3 style="color: white; margin-top: 0;">📊 Grading Breakdown</h3>
-
 #### 🤖 Generative AI Course
 - **📝 Lab Reports + Lab 4:** 20%
 - **🧠 Quiz Results:** 30%
@@ -134,5 +122,3 @@ Create a technical chatbot for answering medical field questions using cloud tec
 - 📁 Professional GitHub repository
 - 📏 PEP8 compliance (Flake8, PyLint, Black)
 - 🔄 Good Git practices (commits, PRs)
-
-</div>
