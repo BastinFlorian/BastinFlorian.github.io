@@ -16,33 +16,22 @@ nav_order: 6
 - **Chapter 4 - Agents:** [Chapter 4 - Agents](/assets/pdf/4%20-%20Agent.pdf)
 - **Chapter 5 - Evaluation:** [Chapter 5 - Evaluation](/assets/pdf/5%20-%20Evaluation.pdf)
 
-## 📖 Mandatory Readings
+## 📖 Mandatory Learning Path (Follow in Order)
 
-### 🎯 Fundamental Readings (Must Read)
-- **Attention Is All You Need** ⭐⭐⭐ — Vaswani et al. (2017) - **3 hours study**:: [arXiv](https://arxiv.org/abs/1706.03762)
-  - The foundational paper introducing Transformers, basis of all modern LLMs
-- **BERT: Pre-training of Deep Bidirectional Transformers** ⭐⭐⭐ — Devlin et al. (2018) - **2 hours study**: [arXiv](https://arxiv.org/abs/1810.04805)
-  - First massively pre-trained model that revolutionized NLP, introduced transfer learning and bidirectional context understanding
-- **DeepSeek-R1: Incentivizing Reasoning Capability in LLMs** ⭐⭐⭐ — DeepSeek-AI (2025) - **2 hours study**: [arXiv](https://arxiv.org/pdf/2501.12948)
-  - Breakthrough in open-source reasoning models, matching OpenAI o1 performance
+| # | Resource | Author/Source | Format | Study Time | Link | Description |
+|---|----------|---------------|--------|------------|------|-------------|
+| 1 | **Visual Understanding of LLMs** | 3Blue1Brown | Video Series | 2 hours | [YouTube Playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) | Beautiful visual explanations of neural networks and deep learning fundamentals |
+| 2 | **Building Large Language Models** | Stanford CS229 | Video | 1.5 hours | [YouTube](https://www.youtube.com/watch?v=9vM4p9NN0Ts) | Stanford's comprehensive lecture on building LLMs from scratch |
+| 3 | **How Transformer LLMs Work** | DeepLearning.AI | Course | 2 hours | [Course](https://www.deeplearning.ai/short-courses/how-transformer-llms-work/) | Comprehensive course on Transformer architecture and LLM fundamentals |
+| 4 | **Andrej Karpathy's Neural Network Lectures** | Andrej Karpathy | Video | 2 hours | [YouTube](https://www.youtube.com/watch?v=kCc8FmEb1nY) | Building GPT from scratch, excellent for understanding fundamentals |
+| 5 | **The Illustrated Transformer** | Jay Alammar | Blog | 1 hour | [Blog](http://jalammar.github.io/illustrated-transformer/) | The best visual guide to understanding Transformers, step-by-step |
+| 6 | **Attention Mechanism Visualized** | Jay Alammar | Blog | 1 hour | [Blog](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/) | Visual breakdown of attention mechanisms in sequence models |
+| 7 | **Attention Is All You Need** | Vaswani et al. | Paper | 3 hours | [arXiv](https://arxiv.org/abs/1706.03762) | The foundational paper introducing Transformers, basis of all modern LLMs |
+| 8 | **BERT: Pre-training of Deep Bidirectional Transformers**  | Devlin et al. | Paper | 2 hours | [arXiv](https://arxiv.org/abs/1810.04805) | First massively pre-trained model that revolutionized NLP, introduced transfer learning |
+| 9 | **The Illustrated GPT-2** | Jay Alammar | Blog | 30 mins | [Blog](http://jalammar.github.io/illustrated-gpt2/) | Visual explanation of GPT architecture and training |
+| 10 | **DeepSeek-R1: Incentivizing Reasoning Capability in LLMs** | DeepSeek-AI | Paper | 2 hours | [arXiv](https://arxiv.org/pdf/2501.12948) | Breakthrough in open-source reasoning models, matching OpenAI o1 performance |
 
-### 🎥  Must-Watch Visual Explanations
-- **Building Large Language Models** — Stanford CS229 - **1.5 hours study**: [YouTube](https://www.youtube.com/watch?v=9vM4p9NN0Ts)
-  - Stanford's comprehensive lecture on building LLMs from scratch, covering architecture, training, and deployment
-- **The Illustrated Transformer** — Jay Alammar - **1 hour study**: [Blog](http://jalammar.github.io/illustrated-transformer/)
-  - The best visual guide to understanding Transformers, step-by-step illustrations
-- **Visual understandings of LLMs** — 3Blue1Brown - **2 hours study**: [YouTube Playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-  - Beautiful visual explanations of neural networks and deep learning fundamentals
-- **Attention Mechanism Visualized** — Jay Alammar - **1 hour study**: [Blog](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
-  - Visual breakdown of attention mechanisms in sequence models
-
-### 🎥 Must read / watch Resources
-- **How Transformer LLMs Work** — DeepLearning.AI - **2 hours study**: [Course](https://www.deeplearning.ai/short-courses/how-transformer-llms-work/)
-  - Comprehensive course on Transformer architecture and LLM fundamentals
-- **The Illustrated GPT-2** — Jay Alammar - **30 mins study**: [Blog](http://jalammar.github.io/illustrated-gpt2/)
-  - Visual explanation of GPT architecture and training
-- **Andrej Karpathy's Neural Network Lectures** — **2 hours study**: [YouTube](https://www.youtube.com/watch?v=kCc8FmEb1nY)
-  - Building GPT from scratch, excellent for understanding fundamentals
+**Total Study Time: ~16.5 hours**
 
 
 ## 💻 Code Repository
