@@ -18,18 +18,18 @@ nav_order: 6
 
 ## 📖 Mandatory Learning Path (Follow in Order)
 
-| # | Resource | Author/Source | Format | Study Time | Link | Description |
-|---|----------|---------------|--------|------------|------|-------------|
-| 1 | **Visual Understanding of LLMs** | 3Blue1Brown | Video Series | 2 hours | [YouTube Playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) | Beautiful visual explanations of neural networks and deep learning fundamentals |
-| 2 | **Building Large Language Models** | Stanford CS229 | Video | 1.5 hours | [YouTube](https://www.youtube.com/watch?v=9vM4p9NN0Ts) | Stanford's comprehensive lecture on building LLMs from scratch |
-| 3 | **How Transformer LLMs Work** | DeepLearning.AI | Course | 2 hours | [Course](https://www.deeplearning.ai/short-courses/how-transformer-llms-work/) | Comprehensive course on Transformer architecture and LLM fundamentals |
-| 4 | **Andrej Karpathy's Neural Network Lectures** | Andrej Karpathy | Video | 2 hours | [YouTube](https://www.youtube.com/watch?v=kCc8FmEb1nY) | Building GPT from scratch, excellent for understanding fundamentals |
-| 5 | **The Illustrated Transformer** | Jay Alammar | Blog | 1 hour | [Blog](http://jalammar.github.io/illustrated-transformer/) | The best visual guide to understanding Transformers, step-by-step |
-| 6 | **Attention Mechanism Visualized** | Jay Alammar | Blog | 1 hour | [Blog](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/) | Visual breakdown of attention mechanisms in sequence models |
-| 7 | **Attention Is All You Need** | Vaswani et al. | Paper | 3 hours | [arXiv](https://arxiv.org/abs/1706.03762) | The foundational paper introducing Transformers, basis of all modern LLMs |
-| 8 | **BERT: Pre-training of Deep Bidirectional Transformers**  | Devlin et al. | Paper | 2 hours | [arXiv](https://arxiv.org/abs/1810.04805) | First massively pre-trained model that revolutionized NLP, introduced transfer learning |
-| 9 | **The Illustrated GPT-2** | Jay Alammar | Blog | 30 mins | [Blog](http://jalammar.github.io/illustrated-gpt2/) | Visual explanation of GPT architecture and training |
-| 10 | **DeepSeek-R1: Incentivizing Reasoning Capability in LLMs** | DeepSeek-AI | Paper | 2 hours | [arXiv](https://arxiv.org/pdf/2501.12948) | Breakthrough in open-source reasoning models, matching OpenAI o1 performance |
+| # | Resource | Author/Source | Study Time | Link | Description |
+|---|----------|---------------|------------|------|-------------|
+| 1 | **Visual Understanding of LLMs** | 3Blue1Brown | 2 hours | [YouTube Playlist](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) | Beautiful visual explanations of neural networks and deep learning fundamentals |
+| 2 | **Building Large Language Models** | Stanford CS229 | 1.5 hours | [YouTube](https://www.youtube.com/watch?v=9vM4p9NN0Ts) | Stanford's comprehensive lecture on building LLMs from scratch |
+| 3 | **How Transformer LLMs Work** | DeepLearning.AI | 2 hours | [Course](https://www.deeplearning.ai/short-courses/how-transformer-llms-work/) | Comprehensive course on Transformer architecture and LLM fundamentals |
+| 4 | **Andrej Karpathy's Neural Network Lectures** | Andrej Karpathy | 2 hours | [YouTube](https://www.youtube.com/watch?v=kCc8FmEb1nY) | Building GPT from scratch, excellent for understanding fundamentals |
+| 5 | **The Illustrated Transformer** | Jay Alammar | 1 hour | [Blog](http://jalammar.github.io/illustrated-transformer/) | The best visual guide to understanding Transformers, step-by-step |
+| 6 | **Attention Mechanism Visualized** | Jay Alammar | 1 hour | [Blog](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/) | Visual breakdown of attention mechanisms in sequence models |
+| 7 | **Attention Is All You Need** | Vaswani et al. | 3 hours | [arXiv](https://arxiv.org/abs/1706.03762) | The foundational paper introducing Transformers, basis of all modern LLMs |
+| 8 | **BERT: Pre-training of Deep Bidirectional Transformers**  | Devlin et al. | 2 hours | [arXiv](https://arxiv.org/abs/1810.04805) | First massively pre-trained model that revolutionized NLP, introduced transfer learning |
+| 9 | **The Illustrated GPT-2** | Jay Alammar | 30 mins | [Blog](http://jalammar.github.io/illustrated-gpt2/) | Visual explanation of GPT architecture and training |
+| 10 | **DeepSeek-R1: Incentivizing Reasoning Capability in LLMs** | DeepSeek-AI | 2 hours | [arXiv](https://arxiv.org/pdf/2501.12948) | Breakthrough in open-source reasoning models, matching OpenAI o1 performance |
 
 **Total Study Time: ~16.5 hours**
 
@@ -58,107 +58,81 @@ nav_order: 6
 
 ---
 
-# Dauphine Tunis 2024-2025
+# 📚 Dauphine Tunis 2024-2025 (Archive)
 
-## Generative AI
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
+<h2 style="color: white; margin-top: 0;">🎓 Generative AI Course</h2>
 
-- **Course Materials (2025):** [Gen AI - Dauphine Tunis.pdf](/assets/pdf/Gen%20AI%20-%20Dauphine%20Tunis.pdf)
-- **Git Exercises Repository:** [GenAI-Dauphine-Course](https://github.com/BastinFlorian/GenAI-Dauphine-Course)
-- **Podcast Spotify Playlist:** [GenAI Podcast](https://open.spotify.com/show/4Y7k3SpY00R7w0O0CfuGol)
-- **Quizzes Page:** [GenAI Quiz](https://bastinflorian.github.io/blog/2024/genai-quiz/)
+### 📖 Course Materials
+- **📄 Complete Course Materials:** [Gen AI - Dauphine Tunis.pdf](/assets/pdf/Gen%20AI%20-%20Dauphine%20Tunis.pdf)
+- **💻 Practical Exercises:** [GenAI-Dauphine-Course](https://github.com/BastinFlorian/GenAI-Dauphine-Course)
+- **🎧 Educational Podcast:** [GenAI Podcast](https://open.spotify.com/show/4Y7k3SpY00R7w0O0CfuGol)
+- **📝 Interactive Quizzes:** [GenAI Quiz](https://bastinflorian.github.io/blog/2024/genai-quiz/)
 
----
+### ☁️ AI with Google Cloud Platform
+- **🔧 Cloud Exercises Repository:** [GenAI-GCP](https://github.com/BastinFlorian/GenAI-GCP)
 
-## AI with GCP
+</div>
 
-- **Git Exercises Repository:** [GenAI-GCP](https://github.com/BastinFlorian/GenAI-GCP)
+### 🎯 Final Project & Grading (2024-2025)
 
----
+<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
 
-## Projects: Medical GCP Chatbot
-You are tasked with creating a technical chatbot capable of answering specific questions in the medical field.
+<h3 style="color: white; margin-top: 0;">🏥 Medical GCP Chatbot Project</h3>
 
-**Available Data:**
+**📋 Project Overview:**
+Create a technical chatbot for answering medical field questions using cloud technologies.
 
-- [Data](https://www.kaggle.com/datasets/jpmiller/layoutlm/data)
+**📊 Available Dataset:**
+- **Data Source:** [Kaggle LayoutLM Dataset](https://www.kaggle.com/datasets/jpmiller/layoutlm/data)
 
-**Evaluation Criteria:**
+#### ✅ Core Requirements (1-7)
 
-1.	**Streamlit Interface:**
-- Create a Streamlit interface that answers questions based on the dataset.
+| # | Component | Description |
+|---|-----------|-------------|
+| 1 | **🖥️ Streamlit Interface** | Interactive web interface for question-answering |
+| 2 | **☁️ Cloud SQL Setup** | Database integration with Streamlit/Gradio interface |
+| 3 | **💬 Exact Answers** | Precise answer generation for each question |
+| 4 | **📚 Source Display** | Show sources with similarity scores and focus areas |
+| 5 | **💻 Code Quality** | GitHub repo with README, requirements, and best practices |
+| 6 | **🚀 Deployment** | Cloud Run deployment with project naming convention |
+| 7 | **📈 Evaluation** | Metrics selection and eval.py script for testing |
 
-2.	**Cloud SQL:**
-- Set up a table in Cloud SQL.
-- Create a chatbot interface using Streamlit or Gradio.
+#### 🏆 Additional Requirements
+- **📋 Model Card:** Comprehensive documentation of your solution
+- **🎨 Bonus Creativity:** LangGraph agents, LangFuse monitoring, feedback dashboards, fine-tuning, multimodality
 
-3.	**Exact Answers:**
-- Formulate the precise “answer” for each “question.”
+#### 📅 Submission Details
+- **📆 Deadline:** January 15th (GitHub link + model card)
+- **🎤 Presentation:** January 25th (15 min demo + Q&A)
 
-4.	**Source Display:**
-- Display the sources used to answer the question. For each source:
-- Ensure the “source” and “focus_area” elements are present and correctly stored in Cloud SQL.
-- Include the similarity score and its type.
+</div>
 
-5.	**Code Quality:**
-- Develop a Git repository containing your code, a README file, and a requirements file.
-- Adhere to coding conventions and best practices (tools like Flake8, PyLint, or Autopep8 can assist).
+<div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 10px; margin: 20px 0; color: white;">
 
-6.	**Deployment:**
-- Deploy the Streamlit application on Cloud Run using the project name ‘initials-project.’
+<h3 style="color: white; margin-top: 0;">📊 Grading Breakdown</h3>
 
-7.	**Evaluation:**
-- Select evaluation metrics.
-- Create an eval.py script that allows testing of your chatbot by running the command python eval.py. The evaluation should be conducted on 10 random examples from the dataset.
+#### 🤖 Generative AI Course
+- **📝 Lab Reports + Lab 4:** 20%
+- **🧠 Quiz Results:** 30%
+- **🎯 Final Project:** 50%
 
-8.	**Model Card:**
-- Ensure the quality of your model card.
+#### ☁️ AI on the Cloud Course
+- **📝 Lab Reports + Lab 4:** 40%
+- **🎯 Final Project:** 60%
 
-9.	**Bonus: Creativity:**
-- The problem itself is not overly complex from an AI perspective (though it may be challenging in terms of development and deployment, given your background). You are free to explore one or more of the following to add complexity to the project:
-- Explore agents and use LangGraph.
-- Use an open-source solution like LangFuse to monitor LLM calls.
-- Collect feedback and create a dashboard or satisfaction histogram.
-- Investigate fine-tuning while accounting for cost metrics.
-- Incorporate multimodality, such as displaying descriptive images for questions.
-- Refine prompts to focus on a specific language.
+#### 🎯 Evaluation Criteria
 
-**Specific Note:**
+**For Generative AI:**
+- ✨ Quality of reasoning and model choices
+- 🚀 Performance of your solution
+- 🔬 Rigor of evaluation
+- 🎤 Quality of presentation
 
-- Students wishing to work on a more complex solution with additional data can achieve the highest grade without necessarily meeting all criteria.
-- Students focusing exclusively on criteria 1 through 7 can achieve the highest grade if all seven criteria are rigorously met.
-- Separate grades will be given for Generative AI functionality and cloud features based on their complexity.
+**For AI on the Cloud:**
+- ☁️ Thoughtful use of Cloud tools
+- 📁 Professional GitHub repository
+- 📏 PEP8 compliance (Flake8, PyLint, Black)
+- 🔄 Good Git practices (commits, PRs)
 
-**Submission:**
-
-- Deadline: Please submit your project by January 15th via a GitHub link, including the model card in the README.
-- Presentation: A 15-minute demonstration of your solution via screen sharing will take place on January 25th. During the session, I will ask about your solution choices and reasoning. If you cannot attend on January 25th, please notify me as soon as possible with a valid reason so we can arrange another time.
-
-----
-
-## Grading
-
-**AI on the Cloud:**
-
-- 40% of the grade is based on the lab reports and the performance of your chatbot from Lab 4.
-- 60% of the grade is based on the final project.
-
-**Generative AI:**
-
-- 20% of the grade is based on the lab reports and the performance of your chatbot from Lab 4.
-- 30% of the grade is based on quiz results.
-- 50% of the grade is based on the final project.
-
-**Grading Criteria for Generative AI:**
-- The quality of reasoning and model choices.
-- The performance of your solution.
-- The rigor of evaluation.
-- The quality of your presentation.
-
-**Grading Criteria for AI on the Cloud:**
-
-- Thoughtful use of Cloud tools.
-- Hosting your project on your own GitHub.
-- Adherence to PEP8 best practices (Flake8, PyLint, Black, etc.).
-- Good practices for commits and pull requests.
-
-Regarding the project content, feel free to submit your proposals based on your professionalization goals or internship themes. These proposals can focus on the generation of images, text, video, or sound.
+</div>
