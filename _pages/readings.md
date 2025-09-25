@@ -3,7 +3,7 @@ layout: page
 permalink: /readings/
 title: Essential LLM Readings
 description: Curated list of foundational and recent papers on Large Language Models
-nav: false
+nav: true
 nav_order: 7
 ---
 
