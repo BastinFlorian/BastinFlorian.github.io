@@ -1,14 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - BastinFlorian
 
-repo_description_lines_max: 2
+repo_description_lines_max: 4
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - BastinFlorian/RAG-Chatbot-with-Confluence
+  - BastinFlorian/RAG-on-GCP-with-VertexAI
+  - BastinFlorian/GenAI-GCP
+  - BastinFlorian/GenAI-Dauphine-Course
+  - BastinFlorian/OCR-LLM
