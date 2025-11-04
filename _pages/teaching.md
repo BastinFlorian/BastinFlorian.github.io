@@ -9,6 +9,40 @@ nav_order: 6
 
 # 📚 Dauphine Tunis 2025-2026 - Generative AI
 
+## 📅 Today's Course (November 4, 2025)
+**🎓 Introduction to LangGraph**
+- **Course Link:** [LangChain Academy - Intro to LangGraph](https://academy.langchain.com/courses/intro-to-langgraph)
+- Please follow this course during today's session
+
+## ⏰ Deadlines
+
+### 📖 Deadline 1: November 13, 2025 - 23:59
+**Learning Materials & LangGraph Course**
+- **What to complete:**
+  - All resources from the "Mandatory Learning Path" section
+  - LangChain Academy - Introduction to LangGraph course
+- **⚠️ No submission required** but an exam may be held during the class on November 14, 2025
+
+### 💻 Deadline 2: November 13, 2025 - 23:59
+**Google Colab Notebooks**
+- **What to submit:**
+  - All completed Google Colab notebooks from the course
+- **How to submit:**
+  - Send by email a ZIP file containing all completed notebooks or send me a mail with a sharing access to a drive repository
+- **⚠️ Important:** No submissions will be accepted after this deadline
+
+### 🎯 Deadline 3: December 15-16, 2025
+**Final Project Presentations**
+- **📋 Project topic:** Available from November 5, 2025
+- **Presentation dates:**
+  - December 15, 2025: 12:15 - 13:45
+  - December 16, 2025: 12:15 - 13:45
+- **📝 Registration:** [Sign up for your presentation slot here](https://docs.google.com/spreadsheets/d/11DtqgsnIJQUpilp2DN63NgYSlFZ_kocSOhGoc_yhPhI/edit?gid=0#gid=0)
+- **What to prepare:**
+  - Final project demonstration
+  - Project code and documentation
+
+
 ## 📚 Course Materials by Chapter
 The courses slides have been sent by email with the following object "Generative AI - Slides de cours".
 
