@@ -8,6 +8,9 @@ nav_order: 6
 ---
 
 # 📚 Dauphine Tunis 2025-2026 - Generative AI
+## 📋 Project Instructions:
+
+Check this code repository: https://github.com/BastinFlorian/dauphine-project-iasd-2025
 
 ## 📅 Today's Course (November 4, 2025)
 **🎓 Introduction to LangGraph**
@@ -33,7 +36,7 @@ nav_order: 6
 
 ### 🎯 Deadline 3: December 15-16, 2025
 **Final Project Presentations**
-- **📋 Project topic:** Available from November 5, 2025
+- **📋 Project topic:** Check this [link](https://github.com/BastinFlorian/dauphine-project-iasd-2025)
 - **Presentation dates:**
   - December 15, 2025: 12:15 - 13:45
   - December 16, 2025: 12:15 - 13:45
