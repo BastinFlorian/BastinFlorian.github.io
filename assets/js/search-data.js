@@ -48,7 +48,7 @@ ninja.data = [{
         
           title: 'Comment utiliser le mutlimodal pour améliorer un chatbot RAG ? - OCTO Talks... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
-        description: "Comment détecter, choisir, analyser et résumer des informations non textuelles (images &amp; tableaux) dans vos sources documentaires en utilisant le multimodal ?",
+        description: "Découvrez comment exploiter le multimodal (texte, image, tableaux) pour enrichir les performances d’un chatbot RAG et améliorer la qualité des réponses.",
         section: "Posts",
         handler: () => {
           
