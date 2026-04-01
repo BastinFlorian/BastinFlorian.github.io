@@ -1,0 +1,137 @@
+<svg width="680" height="1040" viewBox="0 0 680 1040" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1.5L8 5L2 8.5" fill="none" stroke="#D97757" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1.5L8 5L2 8.5" fill="none" stroke="#B8A99A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <marker id="arrow-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1.5L8 5L2 8.5" fill="none" stroke="#D97757" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;display=swap');
+    text { font-family: 'DM Sans', 'Helvetica Neue', sans-serif; }
+  </style>
+</defs>
+
+<rect x="0" y="0" width="680" height="1040" rx="0" fill="#1A1714"/>
+
+<text x="340" y="40" text-anchor="middle" fill="#F5F0EB" font-size="18" font-weight="600">How Claude Code actually works</text>
+<text x="340" y="62" text-anchor="middle" fill="#B8A99A" font-size="12">From prompt to response · revealed by the March 31, 2026 source leak</text>
+<line x1="260" y1="76" x2="420" y2="76" stroke="#D97757" stroke-width="1" opacity="0.4"/>
+
+<rect x="230" y="96" width="220" height="42" rx="21" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<circle cx="252" cy="117" r="10" fill="#D97757" opacity="0.15"/>
+<text x="252" y="121" text-anchor="middle" fill="#D97757" font-size="11">▸</text>
+<text x="345" y="121" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="12" font-weight="500">Developer types a prompt</text>
+
+<line x1="340" y1="138" x2="340" y2="170" stroke="#D97757" stroke-width="0.8" marker-end="url(#arrow)"/>
+
+<rect x="120" y="170" width="440" height="76" rx="8" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<rect x="120" y="170" width="4" height="76" rx="2" fill="#D97757"/>
+<text x="145" y="195" fill="#D97757" font-size="10" font-weight="600" letter-spacing="1.5">CONTEXT</text>
+<text x="145" y="215" fill="#F5F0EB" font-size="12" font-weight="500">Project context loading</text>
+<text x="145" y="234" fill="#B8A99A" font-size="11">CLAUDE.md · git branch · recent commits · MEMORY.md (first 200 lines)</text>
+
+<line x1="340" y1="246" x2="340" y2="278" stroke="#D97757" stroke-width="0.8" marker-end="url(#arrow)"/>
+
+<rect x="210" y="278" width="260" height="40" rx="6" fill="#332E28" stroke="#D97757" stroke-width="0.5" stroke-dasharray="4 3"/>
+<text x="340" y="302" text-anchor="middle" dominant-baseline="central" fill="#D97757" font-size="12" font-weight="500">Message queue</text>
+
+<line x1="340" y1="318" x2="340" y2="352" stroke="#D97757" stroke-width="0.8" marker-end="url(#arrow)"/>
+
+<rect x="150" y="352" width="380" height="60" rx="8" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<rect x="150" y="352" width="380" height="4" rx="2" fill="#D97757"/>
+<text x="340" y="380" text-anchor="middle" fill="#F5F0EB" font-size="13" font-weight="600">Claude API call · Opus 4.6</text>
+<text x="340" y="400" text-anchor="middle" fill="#B8A99A" font-size="11">System prompt + tool definitions + message → model</text>
+
+<line x1="340" y1="412" x2="340" y2="446" stroke="#D97757" stroke-width="0.8" marker-end="url(#arrow)"/>
+
+<polygon points="340,446 448,484 340,522 232,484" fill="#332E28" stroke="#D97757" stroke-width="0.8"/>
+<text x="340" y="484" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="12" font-weight="500">Tool call?</text>
+
+<line x1="448" y1="484" x2="540" y2="484" stroke="#B8A99A" stroke-width="0.8" marker-end="url(#arrow-muted)"/>
+<text x="488" y="476" fill="#B8A99A" font-size="10">No</text>
+
+<rect x="540" y="464" width="108" height="40" rx="20" fill="#D97757" opacity="0.9"/>
+<text x="594" y="488" text-anchor="middle" dominant-baseline="central" fill="#1A1714" font-size="12" font-weight="600">Response ✓</text>
+
+<line x1="340" y1="522" x2="340" y2="560" stroke="#D97757" stroke-width="0.8" marker-end="url(#arrow)"/>
+<text x="354" y="544" fill="#D97757" font-size="10" font-weight="500">Yes</text>
+
+<rect x="68" y="560" width="544" height="210" rx="10" fill="#221E1A" stroke="#3D352E" stroke-width="0.5"/>
+<text x="90" y="586" fill="#D97757" font-size="10" font-weight="600" letter-spacing="1.5">TOOLS (40+)</text>
+
+<text x="90" y="614" fill="#B8A99A" font-size="9" font-weight="600" letter-spacing="0.8">READ / WRITE</text>
+
+<rect x="90" y="624" width="88" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="134" y="643" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">Read</text>
+
+<rect x="186" y="624" width="88" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="230" y="643" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">Edit</text>
+
+<rect x="282" y="624" width="88" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="326" y="643" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">Grep</text>
+
+<rect x="378" y="624" width="88" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="422" y="643" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">Write</text>
+
+<rect x="474" y="624" width="120" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="534" y="643" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">Glob / LS / LSP</text>
+
+<text x="90" y="680" fill="#B8A99A" font-size="9" font-weight="600" letter-spacing="0.8">EXECUTION</text>
+
+<rect x="90" y="690" width="148" height="30" rx="4" fill="#332E28" stroke="#D97757" stroke-width="0.5" stroke-opacity="0.4"/>
+<text x="164" y="709" text-anchor="middle" dominant-baseline="central" fill="#D97757" font-size="11" font-weight="500">Bash (23 checks)</text>
+
+<rect x="246" y="690" width="120" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="306" y="709" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">WebSearch</text>
+
+<rect x="374" y="690" width="110" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="429" y="709" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">WebFetch</text>
+
+<rect x="492" y="690" width="102" height="30" rx="4" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<text x="543" y="709" text-anchor="middle" dominant-baseline="central" fill="#F5F0EB" font-size="11">TodoWrite</text>
+
+<text x="90" y="746" fill="#B8A99A" font-size="9" font-weight="600" letter-spacing="0.8">ORCHESTRATION</text>
+<rect x="90" y="755" width="504" height="4" rx="2" fill="#D97757" opacity="0.15"/>
+
+<path d="M340 770 L340 792 L52 792 L52 302 L208 302" fill="none" stroke="#D97757" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#arrow-loop)" opacity="0.7"/>
+
+<rect x="30" y="530" width="22" height="100" rx="4" fill="#D97757" opacity="0.08"/>
+<text x="42" y="580" text-anchor="middle" fill="#D97757" font-size="9" font-weight="600" letter-spacing="1" transform="rotate(-90 42 580)">AGENTIC LOOP</text>
+
+<rect x="90" y="780" width="290" height="20" rx="3" fill="#D97757" opacity="0.08"/>
+<text x="100" y="794" fill="#D97757" font-size="10">↩ Tool result → re-injected into the message queue</text>
+
+<rect x="120" y="830" width="440" height="150" rx="10" fill="#221E1A" stroke="#3D352E" stroke-width="0.5"/>
+<text x="145" y="856" fill="#D97757" font-size="10" font-weight="600" letter-spacing="1.5">SUBAGENTS</text>
+<text x="280" y="856" fill="#B8A99A" font-size="10">isolated context · no parent history inherited</text>
+
+<rect x="145" y="874" width="120" height="50" rx="6" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<rect x="145" y="874" width="120" height="3" rx="1.5" fill="#6BA89E"/>
+<text x="205" y="898" text-anchor="middle" fill="#F5F0EB" font-size="12" font-weight="500">Explore</text>
+<text x="205" y="916" text-anchor="middle" fill="#6BA89E" font-size="10">Haiku · read-only</text>
+
+<rect x="280" y="874" width="120" height="50" rx="6" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<rect x="280" y="874" width="120" height="3" rx="1.5" fill="#D97757"/>
+<text x="340" y="898" text-anchor="middle" fill="#F5F0EB" font-size="12" font-weight="500">Plan</text>
+<text x="340" y="916" text-anchor="middle" fill="#D97757" font-size="10">Opus · reasoning</text>
+
+<rect x="415" y="874" width="130" height="50" rx="6" fill="#2A2520" stroke="#3D352E" stroke-width="0.5"/>
+<rect x="415" y="874" width="130" height="3" rx="1.5" fill="#B8A99A"/>
+<text x="480" y="898" text-anchor="middle" fill="#F5F0EB" font-size="12" font-weight="500">General</text>
+<text x="480" y="916" text-anchor="middle" fill="#B8A99A" font-size="10">All tools · multi-step</text>
+
+<rect x="145" y="938" width="420" height="28" rx="4" fill="#D97757" opacity="0.06"/>
+<text x="355" y="956" text-anchor="middle" fill="#B8A99A" font-size="10" font-style="italic">"Do not rubber-stamp weak work" · orchestration prompt (coordinatorMode.ts)</text>
+
+<line x1="165" y1="874" x2="165" y2="755" stroke="#B8A99A" stroke-width="0.5" stroke-dasharray="3 3" marker-end="url(#arrow-muted)"/>
+
+<line x1="120" y1="1000" x2="560" y2="1000" stroke="#3D352E" stroke-width="0.5"/>
+<text x="340" y="1020" text-anchor="middle" fill="#6B6158" font-size="9">Sources: Alex Kim · CodePointer · Kuberwastaken · Sebastian Raschka · VentureBeat (March 2026)</text>
+
+<text x="648" y="1032" text-anchor="end" fill="#D97757" font-size="10" font-weight="500" opacity="0.6">@FlorianBastin</text>
+
+</svg>
