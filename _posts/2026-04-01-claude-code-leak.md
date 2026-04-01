@@ -15,9 +15,19 @@ mermaid:
   zoomable: true
 ---
 
-# Claude Code sous le capot : ce que le leak du 31 mars 2026 révèle sur le fonctionnement du plus populaire des agents de code IA
-
 *Analyse technique basée exclusivement sur les sources ayant lu le code source réel (31 mars – 1er avril 2026)*
+
+<div class="row mt-3 mb-4">
+    <div class="col-sm-8 offset-sm-2 mt-3 mt-md-0">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/assets/img/claude-code-leak/claude-code-flow-dark.svg">
+            <img src="/assets/img/claude-code-leak/claude-code-flow-light.svg" alt="Architecture complète de Claude Code" class="img-fluid rounded z-depth-1">
+        </picture>
+    </div>
+</div>
+<div class="caption">
+    Du prompt à la réponse : architecture complète de Claude Code révélée par le leak du 31 mars 2026.
+</div>
 
 ---
 
@@ -41,11 +51,11 @@ L'erreur : personne n'a ajouté `*.map` au fichier `.npmignore`, ni configuré l
 
 ```mermaid
 flowchart LR
-    A["Bun bundler"] -->|"génère par défaut"| B["cli.js.map\n59,8 Mo"]
-    B -->|"*.map absent\nde .npmignore"| C["npm publish\nv2.1.88"]
-    C -->|"sourcesContent\nen clair"| D["512K lignes\nde TypeScript"]
-    D -->|"20 min"| E["Chaofan Shou\nsignale sur X"]
-    E -->|"heures"| F["41 500 forks\nGitHub"]
+    A["Bun bundler"] -->|"génère par défaut"| B["cli.js.map \n 59,8 Mo"]
+    B -->|"*.map absent \n de .npmignore"| C["npm publish \n v2.1.88"]
+    C -->|"sourcesContent \n en clair"| D["512K lignes \n de TypeScript"]
+    D -->|"20 min"| E["Chaofan Shou \n signale sur X"]
+    E -->|"heures"| F["41 500 forks \n GitHub"]
 
     style A fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
     style B fill:#C4613B,color:#fff,stroke:#C4613B
@@ -150,35 +160,35 @@ L'outil `Task` (ou `Agent`) permet de lancer des sous-agents autonomes. `TodoWri
 ```mermaid
 flowchart TB
     subgraph Lecture["Outils de lecture"]
-        R1["Read\nLire un fichier"]
-        R2["Glob\nChercher par pattern"]
-        R3["Grep\nChercher dans le contenu"]
-        R4["LS\nLister un répertoire"]
-        R5["NotebookRead\nLire un notebook"]
+        R1["Read \n Lire un fichier"]
+        R2["Glob \n Chercher par pattern"]
+        R3["Grep \n Chercher dans le contenu"]
+        R4["LS \n Lister un répertoire"]
+        R5["NotebookRead \n Lire un notebook"]
     end
 
     subgraph Ecriture["Outils d'écriture"]
-        W1["Write\nCréer un fichier"]
-        W2["Edit\nModifier un fichier"]
-        W3["MultiEdit\nModifications multiples"]
-        W4["NotebookEdit\nÉditer un notebook"]
+        W1["Write \n Créer un fichier"]
+        W2["Edit \n Modifier un fichier"]
+        W3["MultiEdit \n Modifications multiples"]
+        W4["NotebookEdit \n Éditer un notebook"]
     end
 
     subgraph Execution["Exécution"]
-        B1["Bash\nCommandes shell"]
-        B2["LSP\nCompréhension sémantique"]
+        B1["Bash \n Commandes shell"]
+        B2["LSP \n Compréhension sémantique"]
     end
 
     subgraph Orchestration["Orchestration"]
-        O1["Agent / Task\nSous-agents autonomes"]
-        O2["TodoWrite / TodoRead\nSuivi de progression"]
-        O3["Skill\nCompétences à la demande"]
-        O4["AskUserQuestion\nInteraction utilisateur"]
+        O1["Agent / Task \n Sous-agents autonomes"]
+        O2["TodoWrite / TodoRead \n Suivi de progression"]
+        O3["Skill \n Compétences à la demande"]
+        O4["AskUserQuestion \n Interaction utilisateur"]
     end
 
     subgraph Web["Accès web"]
-        WE1["WebSearch\nRecherche web"]
-        WE2["WebFetch\nRécupérer une page"]
+        WE1["WebSearch \n Recherche web"]
+        WE2["WebFetch \n Récupérer une page"]
     end
 
     style Lecture fill:#4A9A8A,color:#fff,stroke:#4A9A8A
@@ -210,11 +220,11 @@ Le sous-agent **General-purpose** a accès à tous les outils et peut gérer des
 
 ```mermaid
 flowchart TB
-    ORCH["Orchestrateur\n(Opus 4.6)"]
+    ORCH["Orchestrateur \n (Opus 4.6)"]
 
-    ORCH -->|"Explore le codebase\n(lecture seule)"| EXP["Sous-agent Explore\n(Haiku)"]
-    ORCH -->|"Planifie les étapes"| PLAN["Sous-agent Plan\n(Opus)"]
-    ORCH -->|"Exécute la tâche\n(tous les outils)"| GP["Sous-agent General-purpose\n(Opus)"]
+    ORCH -->|"Explore le codebase  \n  (lecture seule)"| EXP["Sous-agent Explore \n (Haiku)"]
+    ORCH -->|"Planifie les étapes"| PLAN["Sous-agent Plan \n (Opus)"]
+    ORCH -->|"Exécute la tâche \n (tous les outils)"| GP["Sous-agent General-purpose \n (Opus)"]
 
     EXP -->|"résumé uniquement"| ORCH
     PLAN -->|"plan structuré"| ORCH
@@ -252,22 +262,22 @@ Un détail notable : le code instruit l'agent de traiter sa propre mémoire comm
 flowchart TB
     subgraph C1["Couche 1 - CLAUDE.md"]
         direction LR
-        C1D["Mémoire explicite\nInstructions projet, préférences de style\nChargée au début de chaque session"]
+        C1D["Mémoire explicite \n Instructions projet, préférences de style \n Chargée au début de chaque session"]
     end
 
     subgraph C2["Couche 2 - MEMORY.md"]
         direction LR
-        C2D["Index automatique\n~150 car/ligne, max 200 lignes\nToujours en contexte"]
+        C2D["Index automatique \n ~150 car/ligne, max 200 lignes \n Toujours en contexte"]
     end
 
     subgraph C3["Couche 3 - Compresseur"]
         direction LR
-        C3D["Mémoire de session\nSe déclenche à ~92% du contexte\nRésume et déplace vers le long terme"]
+        C3D["Mémoire de session \n Se déclenche à ~92% du contexte \n Résume et déplace vers le long terme"]
     end
 
     subgraph C4["Couche 4 - AutoDream"]
         direction LR
-        C4D["Consolidation entre sessions\nFusionne, supprime contradictions\nConvertit insights en faits"]
+        C4D["Consolidation entre sessions \n Fusionne, supprime contradictions \n Convertit insights en faits"]
     end
 
     C1 --> C2
@@ -311,13 +321,13 @@ Les protections incluent : 18 builtins Zsh bloqués, une défense contre l'expan
 
 ```mermaid
 flowchart LR
-    CMD["Commande shell\nentrée par Claude"] --> C1["Builtins Zsh\n18 bloqués"]
-    C1 --> C2["Expansion =cmd\nex: =curl"]
-    C2 --> C3["Unicode\nzero-width space"]
-    C3 --> C4["IFS null-byte\ninjection"]
-    C4 --> C5["Token malformé\n(HackerOne)"]
-    C5 --> C6["... 18 autres\nvérifications"]
-    C6 --> OK["Exécution\nautorisée"]
+    CMD["Commande shell \n entrée par Claude"] --> C1["Builtins Zsh \n 18 bloqués"]
+    C1 --> C2["Expansion =cmd \n ex: =curl"]
+    C2 --> C3["Unicode \n zero-width space"]
+    C3 --> C4["IFS null-byte \n injection"]
+    C4 --> C5["Token malformé \n (HackerOne)"]
+    C5 --> C6["... 18 autres \n vérifications"]
+    C6 --> OK["Exécution \n autorisée"]
 
     style CMD fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
     style C1 fill:#C4613B,color:#fff,stroke:#C4613B
@@ -394,17 +404,17 @@ La découverte la plus spectaculaire du leak est probablement KAIROS - un systè
 
 ```mermaid
 flowchart TB
-    START["Queue vide"] --> TICK["Injecte message\n&lt;tick&gt; + heure courante"]
-    TICK --> SET["setTimeout(0)\nyield au event loop"]
-    SET --> CHECK{"Input\nutilisateur ?"}
-    CHECK -->|"Oui"| USER["Traite le message\nutilisateur en priorité"]
-    CHECK -->|"Non"| API["Envoie tick\nà l'API Claude"]
-    API --> DECIDE{"Quelque chose\nd'utile à faire ?"}
-    DECIDE -->|"Oui"| ACT["Exécute l'action\n(outil / notification)"]
-    DECIDE -->|"Non"| SLEEP["SleepTool\nyield le contrôle"]
-    ACT --> BUDGET{"Commande\n> 15 sec ?"}
-    BUDGET -->|"Oui"| BG["Déplace en\narrière-plan"]
-    BUDGET -->|"Non"| RESULT["Résultat dans\nla queue"]
+    START["Queue vide"] --> TICK["Injecte message &lt;tick&gt; + heure courante"]
+    TICK --> SET["setTimeout(0) yield au event loop"]
+    SET --> CHECK{"Input utilisateur ?"}
+    CHECK -->|"Oui"| USER["Traite le message utilisateur en priorité"]
+    CHECK -->|"Non"| API["Envoie tick à l'API Claude"]
+    API --> DECIDE{"Quelque chose d'utile à faire ?"}
+    DECIDE -->|"Oui"| ACT["Exécute l'action (outil / notification)"]
+    DECIDE -->|"Non"| SLEEP["SleepTool yield le contrôle"]
+    ACT --> BUDGET{"Commande > 15 sec ?"}
+    BUDGET -->|"Oui"| BG["Déplace en arrière-plan"]
+    BUDGET -->|"Non"| RESULT["Résultat dans la queue"]
     BG --> START
     RESULT --> START
     SLEEP --> START
@@ -520,22 +530,6 @@ Il ajoute une observation provocante : si on plaçait un autre modèle - DeepSee
 Le projet shareAI-lab, publié le 1er avril, formule la synthèse complète après reverse-engineering du code : Claude Code est une boucle agent + outils + chargement de skills à la demande + compression de contexte + spawn de sous-agents + système de tâches avec graphe de dépendances + coordination d'équipe avec boîtes aux lettres asynchrones + isolation worktree pour l'exécution parallèle + gouvernance des permissions *(shareAI-lab, 1er avril 2026)*.
 
 Et leur conclusion résume peut-être le mieux l'insight fondamental : le harnais ne rend pas Claude intelligent. Claude est déjà intelligent. Le harnais lui donne des mains, des yeux, et un espace de travail *(shareAI-lab, 1er avril 2026)*.
-
-### Vue d'ensemble : du prompt à la réponse
-
-Le schéma ci-dessous résume l'architecture complète de Claude Code telle que révélée par le leak — du message utilisateur jusqu'à la réponse, en passant par la boucle agentique, les outils, et les sous-agents.
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="/assets/img/claude-code-leak/claude-code-flow-dark.svg">
-            <img src="/assets/img/claude-code-leak/claude-code-flow-light.svg" alt="Architecture complète de Claude Code" class="img-fluid rounded z-depth-1">
-        </picture>
-    </div>
-</div>
-<div class="caption">
-    Architecture complète de Claude Code : du prompt utilisateur à la réponse, en passant par le chargement de contexte, la boucle agentique, les 40+ outils, et les sous-agents isolés.
-</div>
 
 ---
 
