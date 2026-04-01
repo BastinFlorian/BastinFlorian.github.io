@@ -10,6 +10,9 @@ related_posts: true
 featured: true
 toc:
   sidebar: left
+mermaid:
+  enabled: true
+  zoomable: true
 ---
 
 # Claude Code sous le capot : ce que le leak du 31 mars 2026 révèle sur le fonctionnement du plus populaire des agents de code IA
@@ -36,6 +39,18 @@ L'explication technique est d'une simplicité déconcertante. Claude Code est co
 
 L'erreur : personne n'a ajouté `*.map` au fichier `.npmignore`, ni configuré le bundler pour désactiver la génération de source maps en production. Un bug Bun documenté le 11 mars — vingt jours avant le leak — signalait justement que les source maps étaient servies en mode production malgré ce que la documentation promettait. Le bug était encore ouvert au moment de l'incident *(Alex Kim, 31 mars 2026)*.
 
+```mermaid
+flowchart LR
+    A["Bun bundler"] -->|"génère par défaut"| B["cli.js.map\n59,8 Mo"]
+    B -->|"*.map absent\nde .npmignore"| C["npm publish\nv2.1.88"]
+    C -->|"sourcesContent\nen clair"| D["512K lignes\nde TypeScript"]
+    D -->|"20 min"| E["Chaofan Shou\nsignale sur X"]
+    E -->|"heures"| F["41 500 forks\nGitHub"]
+
+    style B fill:#e74c3c,color:#fff
+    style C fill:#e74c3c,color:#fff
+```
+
 L'ironie n'échappe à personne : le code contient un sous-système entier appelé "Undercover Mode", conçu spécifiquement pour empêcher les informations internes d'Anthropic de fuiter dans des commits publics. Le fichier `undercover.ts`, environ 90 lignes, interdit au modèle de mentionner des noms de code internes, des canaux Slack, ou même la phrase "Claude Code" quand il opère sur des dépôts open source. Un commentaire en ligne 15 précise qu'il n'existe aucun moyen de désactiver cette protection *(Alex Kim, 31 mars 2026)*. Et pourtant, c'est l'intégralité du système — Undercover Mode compris — qui s'est retrouvée en clair sur npm.
 
 ---
@@ -49,6 +64,58 @@ La première surprise pour quiconque lit le code : Claude Code n'est pas le syst
 Le fonctionnement repose sur une file de messages (message queue). Quand l'utilisateur tape un message, il entre dans cette queue. Quand un outil finit de s'exécuter, son résultat entre dans la même queue. Une fonction `run()` tire les messages, les envoie à l'API Claude, et traite la réponse. Si la réponse contient des appels d'outils, les outils sont exécutés et leurs résultats réalimentent la queue. Quand le modèle répond en texte pur sans demander d'outil, la boucle s'arrête et attend le prochain input *(CodePointer/Substack, 31 mars 2026)*.
 
 Anthropic a délibérément choisi cette architecture single-threaded pour la débuggabilité et la fiabilité. Pas de swarm d'agents concurrents, pas de personas multiples en compétition : un seul fil de messages plat *(Sebastian Raschka, 31 mars 2026)*.
+
+Voici un exemple concret d'aller-retour avec le LLM. L'utilisateur demande *"ajoute un test unitaire pour la fonction parse_config"* :
+
+```mermaid
+sequenceDiagram
+    participant U as Utilisateur
+    participant Q as Message Queue
+    participant R as run()
+    participant API as API Claude (Opus)
+    participant T as Outils locaux
+
+    U->>Q: "ajoute un test unitaire pour parse_config"
+    Q->>R: tire le message
+    R->>API: envoie conversation + outils disponibles
+
+    Note over API: Tour 1 — le modèle cherche le code
+
+    API->>R: tool_call: Grep("parse_config")
+    R->>T: exécute Grep
+    T->>Q: résultat: "src/config.py:42"
+    Q->>R: tire le résultat
+    R->>API: envoie résultat outil
+
+    Note over API: Tour 2 — le modèle lit le fichier
+
+    API->>R: tool_call: Read("src/config.py")
+    R->>T: exécute Read
+    T->>Q: résultat: contenu du fichier
+    Q->>R: tire le résultat
+    R->>API: envoie résultat outil
+
+    Note over API: Tour 3 — le modèle écrit le test
+
+    API->>R: tool_call: Write("tests/test_config.py")
+    R->>T: exécute Write
+    T->>Q: résultat: fichier créé
+    Q->>R: tire le résultat
+    R->>API: envoie résultat outil
+
+    Note over API: Tour 4 — le modèle vérifie
+
+    API->>R: tool_call: Bash("pytest tests/test_config.py")
+    R->>T: exécute pytest
+    T->>Q: résultat: "1 passed"
+    Q->>R: tire le résultat
+    R->>API: envoie résultat outil
+
+    Note over API: Tour 5 — pas d'outil = fin de boucle
+
+    API->>R: texte: "Test ajouté et validé ✓"
+    R->>U: affiche la réponse
+```
 
 ### Trois phases qui se mélangent
 
@@ -76,6 +143,47 @@ L'outil `Bash` permet d'exécuter n'importe quelle commande shell — git, npm, 
 
 L'outil `Task` (ou `Agent`) permet de lancer des sous-agents autonomes. `TodoWrite` et `TodoRead` gèrent des listes de tâches structurées pour le suivi de progression. `AskUserQuestion` pose des questions à l'utilisateur avec possibilité de prévisualisation HTML. `Skill` invoque des compétences chargées à la demande. `WebSearch` et `WebFetch` permettent d'accéder au web *(Kuberwastaken, 31 mars 2026)*.
 
+```mermaid
+flowchart TB
+    subgraph Lecture["Outils de lecture"]
+        R1["Read\nLire un fichier"]
+        R2["Glob\nChercher par pattern"]
+        R3["Grep\nChercher dans le contenu"]
+        R4["LS\nLister un répertoire"]
+        R5["NotebookRead\nLire un notebook"]
+    end
+
+    subgraph Ecriture["Outils d'écriture"]
+        W1["Write\nCréer un fichier"]
+        W2["Edit\nModifier un fichier"]
+        W3["MultiEdit\nModifications multiples"]
+        W4["NotebookEdit\nÉditer un notebook"]
+    end
+
+    subgraph Execution["Exécution"]
+        B1["Bash\nCommandes shell"]
+        B2["LSP\nCompréhension sémantique"]
+    end
+
+    subgraph Orchestration["Orchestration"]
+        O1["Agent / Task\nSous-agents autonomes"]
+        O2["TodoWrite / TodoRead\nSuivi de progression"]
+        O3["Skill\nCompétences à la demande"]
+        O4["AskUserQuestion\nInteraction utilisateur"]
+    end
+
+    subgraph Web["Accès web"]
+        WE1["WebSearch\nRecherche web"]
+        WE2["WebFetch\nRécupérer une page"]
+    end
+
+    style Lecture fill:#3498db,color:#fff
+    style Ecriture fill:#2ecc71,color:#fff
+    style Execution fill:#e74c3c,color:#fff
+    style Orchestration fill:#9b59b6,color:#fff
+    style Web fill:#f39c12,color:#fff
+```
+
 ### Pourquoi des outils dédiés plutôt que tout via Bash ?
 
 La philosophie est claire dans le code : les outils dédiés offrent un meilleur contrôle des permissions, une collecte de résultats plus fiable, et un meilleur suivi. Un outil LSP (Language Server Protocol) est aussi présent pour la hiérarchie d'appels et la recherche de références — ce qui donne à Claude Code une compréhension sémantique du code, pas simplement textuelle *(Sebastian Raschka, 31 mars 2026)*.
@@ -96,6 +204,26 @@ Le sous-agent **Plan** reçoit un prompt enrichi pour décomposer des tâches co
 
 Le sous-agent **General-purpose** a accès à tous les outils et peut gérer des tâches complexes multi-étapes incluant la recherche web, les modifications de fichiers et l'exécution de commandes.
 
+```mermaid
+flowchart TB
+    ORCH["Orchestrateur\n(Opus 4.6)"]
+
+    ORCH -->|"Explore le codebase\n(lecture seule)"| EXP["Sous-agent Explore\n(Haiku)"]
+    ORCH -->|"Planifie les étapes"| PLAN["Sous-agent Plan\n(Opus)"]
+    ORCH -->|"Exécute la tâche\n(tous les outils)"| GP["Sous-agent General-purpose\n(Opus)"]
+
+    EXP -->|"résumé uniquement"| ORCH
+    PLAN -->|"plan structuré"| ORCH
+    GP -->|"résultat final"| ORCH
+
+    style ORCH fill:#2c3e50,color:#fff
+    style EXP fill:#3498db,color:#fff
+    style PLAN fill:#9b59b6,color:#fff
+    style GP fill:#e67e22,color:#fff
+```
+
+Le contexte principal ne grossit que du résumé renvoyé par chaque sous-agent, pas de leur transcription complète. C'est ainsi que Claude Code maintient une fenêtre de contexte maîtrisée même sur des tâches longues.
+
 ### L'orchestration par prompt, pas par code
 
 Un des détails les plus révélateurs du leak : l'algorithme d'orchestration multi-agents dans `coordinatorMode.ts` n'est pas du code procédural — c'est un prompt. L'orchestrateur gère ses agents workers via des instructions en langage naturel dans le prompt système, incluant des directives comme "ne pas valider du travail médiocre" et "comprendre les résultats avant de diriger le travail de suivi — ne jamais déléguer la compréhension elle-même à un autre worker" *(Alex Kim, 31 mars 2026)*.
@@ -115,6 +243,41 @@ VentureBeat identifie le système de mémoire comme la trouvaille la plus signif
 Un fichier Markdown écrit par l'utilisateur ou généré automatiquement. Il contient les instructions projet : commandes de build, préférences de style, décisions architecturales. Ce fichier est chargé au début de chaque session avec le contexte projet (branche git, commits récents). Ses sections statiques sont globalement cachées pour éviter d'être recalculées à chaque tour — un marqueur de frontière sépare le contenu statique du contenu dynamique *(Sebastian Raschka, 31 mars 2026)*.
 
 Un détail notable : le code instruit l'agent de traiter sa propre mémoire comme un "indice" et non une vérité absolue. Le modèle doit vérifier les faits contre le codebase réel avant de procéder *(VentureBeat, 31 mars 2026)*.
+
+```mermaid
+flowchart TB
+    subgraph C1["Couche 1 — CLAUDE.md"]
+        direction LR
+        C1D["Mémoire explicite\nInstructions projet, préférences de style\nChargée au début de chaque session"]
+    end
+
+    subgraph C2["Couche 2 — MEMORY.md"]
+        direction LR
+        C2D["Index automatique\n~150 car/ligne, max 200 lignes\nToujours en contexte"]
+    end
+
+    subgraph C3["Couche 3 — Compresseur"]
+        direction LR
+        C3D["Mémoire de session\nSe déclenche à ~92% du contexte\nRésume et déplace vers le long terme"]
+    end
+
+    subgraph C4["Couche 4 — AutoDream"]
+        direction LR
+        C4D["Consolidation entre sessions\nFusionne, supprime contradictions\nConvertit insights en faits"]
+    end
+
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C4 -.->|"met à jour"| C2
+    C4 -.->|"écrit dans"| TF["Fichiers thématiques"]
+    TF -.->|"pointeurs dans"| C2
+
+    style C1 fill:#2ecc71,color:#fff
+    style C2 fill:#3498db,color:#fff
+    style C3 fill:#e67e22,color:#fff
+    style C4 fill:#9b59b6,color:#fff
+```
 
 ### Couche 2 : MEMORY.md — l'index automatique
 
