@@ -26,6 +26,7 @@ keywords: GenAI, RAG, LLM, Daupgine Tunis # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.jpg # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
+future: true # allow posts with today's or future dates to be published
 url: https://bastinflorian.github.io # the base hostname & protocol for your site
 baseurl: # test
 last_updated: true # set to true if you want to display last updated in the footer

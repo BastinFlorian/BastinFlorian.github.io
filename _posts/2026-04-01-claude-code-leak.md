@@ -47,8 +47,12 @@ flowchart LR
     D -->|"20 min"| E["Chaofan Shou\nsignale sur X"]
     E -->|"heures"| F["41 500 forks\nGitHub"]
 
-    style B fill:#e74c3c,color:#fff
-    style C fill:#e74c3c,color:#fff
+    style A fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
+    style B fill:#C4613B,color:#fff,stroke:#C4613B
+    style C fill:#C4613B,color:#fff,stroke:#C4613B
+    style D fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
+    style E fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style F fill:#7A6E62,color:#fff,stroke:#7A6E62
 ```
 
 L'ironie n'échappe à personne : le code contient un sous-système entier appelé "Undercover Mode", conçu spécifiquement pour empêcher les informations internes d'Anthropic de fuiter dans des commits publics. Le fichier `undercover.ts`, environ 90 lignes, interdit au modèle de mentionner des noms de code internes, des canaux Slack, ou même la phrase "Claude Code" quand il opère sur des dépôts open source. Un commentaire en ligne 15 précise qu'il n'existe aucun moyen de désactiver cette protection *(Alex Kim, 31 mars 2026)*. Et pourtant, c'est l'intégralité du système - Undercover Mode compris - qui s'est retrouvée en clair sur npm.
@@ -177,11 +181,11 @@ flowchart TB
         WE2["WebFetch\nRécupérer une page"]
     end
 
-    style Lecture fill:#3498db,color:#fff
-    style Ecriture fill:#2ecc71,color:#fff
-    style Execution fill:#e74c3c,color:#fff
-    style Orchestration fill:#9b59b6,color:#fff
-    style Web fill:#f39c12,color:#fff
+    style Lecture fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style Ecriture fill:#C4613B,color:#fff,stroke:#C4613B
+    style Execution fill:#1A1714,color:#fff,stroke:#1A1714
+    style Orchestration fill:#7A6E62,color:#fff,stroke:#7A6E62
+    style Web fill:#9C8E80,color:#fff,stroke:#9C8E80
 ```
 
 ### Pourquoi des outils dédiés plutôt que tout via Bash ?
@@ -216,10 +220,10 @@ flowchart TB
     PLAN -->|"plan structuré"| ORCH
     GP -->|"résultat final"| ORCH
 
-    style ORCH fill:#2c3e50,color:#fff
-    style EXP fill:#3498db,color:#fff
-    style PLAN fill:#9b59b6,color:#fff
-    style GP fill:#e67e22,color:#fff
+    style ORCH fill:#1A1714,color:#fff,stroke:#1A1714
+    style EXP fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style PLAN fill:#C4613B,color:#fff,stroke:#C4613B
+    style GP fill:#7A6E62,color:#fff,stroke:#7A6E62
 ```
 
 Le contexte principal ne grossit que du résumé renvoyé par chaque sous-agent, pas de leur transcription complète. C'est ainsi que Claude Code maintient une fenêtre de contexte maîtrisée même sur des tâches longues.
@@ -273,10 +277,10 @@ flowchart TB
     C4 -.->|"écrit dans"| TF["Fichiers thématiques"]
     TF -.->|"pointeurs dans"| C2
 
-    style C1 fill:#2ecc71,color:#fff
-    style C2 fill:#3498db,color:#fff
-    style C3 fill:#e67e22,color:#fff
-    style C4 fill:#9b59b6,color:#fff
+    style C1 fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style C2 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C3 fill:#7A6E62,color:#fff,stroke:#7A6E62
+    style C4 fill:#1A1714,color:#fff,stroke:#1A1714
 ```
 
 ### Couche 2 : MEMORY.md - l'index automatique
@@ -305,6 +309,26 @@ Le fichier `bashSecurity.ts` contient 23 vérifications de sécurité numéroté
 
 Les protections incluent : 18 builtins Zsh bloqués, une défense contre l'expansion equals de Zsh (où `=curl` pourrait contourner les vérifications de permission sur `curl`), la détection d'injection de caractères Unicode zero-width space, la protection contre l'injection IFS null-byte, et un bypass de token malformé découvert lors d'un audit HackerOne *(Alex Kim, 31 mars 2026)*.
 
+```mermaid
+flowchart LR
+    CMD["Commande shell\nentrée par Claude"] --> C1["Builtins Zsh\n18 bloqués"]
+    C1 --> C2["Expansion =cmd\nex: =curl"]
+    C2 --> C3["Unicode\nzero-width space"]
+    C3 --> C4["IFS null-byte\ninjection"]
+    C4 --> C5["Token malformé\n(HackerOne)"]
+    C5 --> C6["... 18 autres\nvérifications"]
+    C6 --> OK["Exécution\nautorisée"]
+
+    style CMD fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
+    style C1 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C2 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C3 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C4 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C5 fill:#C4613B,color:#fff,stroke:#C4613B
+    style C6 fill:#7A6E62,color:#fff,stroke:#7A6E62
+    style OK fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+```
+
 ### Permissions granulaires
 
 Le système de permissions permet de configurer précisément quels outils sont autorisés et pour quels patterns de fichiers. On peut autoriser l'écriture seulement dans `src/**`, permettre Bash uniquement pour `git *` et `npm *`, tout en interdisant la lecture de `.env*`, l'écriture dans `production.config.*`, et l'exécution de `rm *` ou `sudo *`.
@@ -331,6 +355,29 @@ L'activation nécessite quatre conditions simultanées : le flag compile-time `A
 
 Dans `betas.ts` (lignes 279-298), un second mécanisme permet au serveur de résumer le texte de l'assistant entre les appels d'outils et de renvoyer le résumé accompagné d'une signature cryptographique. Aux tours suivants, le texte original peut être restauré depuis la signature. L'utilisateur légitime voit tout ; l'attaquant n'obtient que des résumés tronqués. Ce mécanisme est encore plus restreint : il ne s'active que pour les utilisateurs internes Anthropic *(Alex Kim, 31 mars 2026)*.
 
+```mermaid
+sequenceDiagram
+    participant CC as Claude Code CLI
+    participant API as API Anthropic
+    participant M as Modèle Claude
+    participant ATT as Attaquant (proxy)
+
+    Note over CC,ATT: Utilisateur légitime
+
+    CC->>API: requête + anti_distillation: ['fake_tools']
+    API->>API: injecte faux outils dans le prompt
+    API->>M: prompt avec vrais + faux outils
+    M->>API: réponse (ignore les faux outils)
+    API->>CC: réponse correcte
+
+    Note over CC,ATT: Attaquant enregistrant le trafic
+
+    ATT->>ATT: capture le trafic API
+    ATT->>ATT: voit vrais + faux outils mélangés
+    ATT->>ATT: fine-tune un modèle concurrent
+    Note over ATT: Le modèle concurrent appelle<br/>des outils qui n'existent pas
+```
+
 ### Attestation client native
 
 Dans `system.ts` (lignes 59-95), les requêtes API incluent un placeholder `cch=00000`. Avant que la requête quitte le processus, la couche HTTP native de Bun - écrite en Zig - remplace ces cinq zéros par un hash calculé. Le serveur valide ce hash pour confirmer que la requête provient d'un véritable binaire Claude Code. Le calcul se fait sous le runtime JavaScript, invisible depuis la couche JS *(Alex Kim, 31 mars 2026)*.
@@ -344,6 +391,33 @@ Alex Kim est lucide sur l'efficacité réelle de ces mécanismes : un proxy qui 
 ## 9. KAIROS : l'agent toujours actif qui n'a pas encore été allumé
 
 La découverte la plus spectaculaire du leak est probablement KAIROS - un système complet d'agent proactif toujours actif, entièrement construit mais maintenu derrière les feature flags `PROACTIVE` et `KAIROS`, complètement absent des builds externes *(Kuberwastaken, 31 mars 2026)*. L'analyse la plus détaillée vient de CodePointer sur Substack, qui a lu le code ligne par ligne avec des références précises aux fichiers et numéros de ligne.
+
+```mermaid
+flowchart TB
+    START["Queue vide"] --> TICK["Injecte message\n&lt;tick&gt; + heure courante"]
+    TICK --> SET["setTimeout(0)\nyield au event loop"]
+    SET --> CHECK{"Input\nutilisateur ?"}
+    CHECK -->|"Oui"| USER["Traite le message\nutilisateur en priorité"]
+    CHECK -->|"Non"| API["Envoie tick\nà l'API Claude"]
+    API --> DECIDE{"Quelque chose\nd'utile à faire ?"}
+    DECIDE -->|"Oui"| ACT["Exécute l'action\n(outil / notification)"]
+    DECIDE -->|"Non"| SLEEP["SleepTool\nyield le contrôle"]
+    ACT --> BUDGET{"Commande\n> 15 sec ?"}
+    BUDGET -->|"Oui"| BG["Déplace en\narrière-plan"]
+    BUDGET -->|"Non"| RESULT["Résultat dans\nla queue"]
+    BG --> START
+    RESULT --> START
+    SLEEP --> START
+    USER --> START
+
+    style START fill:#F2EFEB,color:#1A1714,stroke:#E0DBD4
+    style TICK fill:#C4613B,color:#fff,stroke:#C4613B
+    style SLEEP fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style ACT fill:#1A1714,color:#fff,stroke:#1A1714
+    style BG fill:#7A6E62,color:#fff,stroke:#7A6E62
+    style USER fill:#4A9A8A,color:#fff,stroke:#4A9A8A
+    style API fill:#C4613B,color:#fff,stroke:#C4613B
+```
 
 ### La boucle de ticks : l'agent qui ne dort jamais
 
@@ -446,6 +520,22 @@ Il ajoute une observation provocante : si on plaçait un autre modèle - DeepSee
 Le projet shareAI-lab, publié le 1er avril, formule la synthèse complète après reverse-engineering du code : Claude Code est une boucle agent + outils + chargement de skills à la demande + compression de contexte + spawn de sous-agents + système de tâches avec graphe de dépendances + coordination d'équipe avec boîtes aux lettres asynchrones + isolation worktree pour l'exécution parallèle + gouvernance des permissions *(shareAI-lab, 1er avril 2026)*.
 
 Et leur conclusion résume peut-être le mieux l'insight fondamental : le harnais ne rend pas Claude intelligent. Claude est déjà intelligent. Le harnais lui donne des mains, des yeux, et un espace de travail *(shareAI-lab, 1er avril 2026)*.
+
+### Vue d'ensemble : du prompt à la réponse
+
+Le schéma ci-dessous résume l'architecture complète de Claude Code telle que révélée par le leak — du message utilisateur jusqu'à la réponse, en passant par la boucle agentique, les outils, et les sous-agents.
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="/assets/img/claude-code-leak/claude-code-flow-dark.svg">
+            <img src="/assets/img/claude-code-leak/claude-code-flow-light.svg" alt="Architecture complète de Claude Code" class="img-fluid rounded z-depth-1">
+        </picture>
+    </div>
+</div>
+<div class="caption">
+    Architecture complète de Claude Code : du prompt utilisateur à la réponse, en passant par le chargement de contexte, la boucle agentique, les 40+ outils, et les sous-agents isolés.
+</div>
 
 ---
 
