@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/readings/";
           },
-        },{id: "post-comment-utiliser-le-mutlimodal-pour-améliorer-un-chatbot-rag-octo-talks",
+        },{id: "post-claude-code-sous-le-capot-ce-que-le-leak-du-31-mars-2026-révèle",
+        
+          title: "Claude Code sous le capot : ce que le leak du 31 mars...",
+        
+        description: "Analyse technique du leak accidentel de 512 000 lignes de code source de Claude Code via npm. Architecture agentique, mémoire, sécurité, KAIROS et anti-distillation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/claude-code-leak/";
+          
+        },
+      },{id: "post-comment-utiliser-le-mutlimodal-pour-améliorer-un-chatbot-rag-octo-talks",
         
           title: 'Comment utiliser le mutlimodal pour améliorer un chatbot RAG ? - OCTO Talks... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
